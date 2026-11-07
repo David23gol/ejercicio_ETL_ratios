@@ -1,0 +1,18 @@
+py -m venv venv
+
+.\venv\Scripts\Activate.ps1
+
+***Nota: Si te aparece un error en letras rojas sobre restricciones o políticas de ejecución (execution of scripts is disabled), habilítalo temporalmente con este comando y repite la activación:
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+.\nombre_venv\Scripts\Activate.ps1
+
+pip install pandas
+
+import numpy as np
+import pandas as pd
+
+# 1. Cargar los datos del CSV sucio en la variable
+campaña_datos_sucios_df = pd.read_csv("campaña_datos_sucios.csv", sep=";")
+campaña_limpia_df = campaña_datos_sucios_df.copy() # Copiar la df con otro nombre_venv
